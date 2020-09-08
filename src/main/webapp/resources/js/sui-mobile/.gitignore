@@ -1,0 +1,12 @@
+*.swp
+*.swo
+node_modules
+docs/dist/
+.package/
+.sass-cache/
+.DS_Store
+_site/*
+*.orig
+nbproject
+docs/demos/test.html
+docs/assets/js/test.js
