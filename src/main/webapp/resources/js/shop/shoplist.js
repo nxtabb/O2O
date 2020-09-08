@@ -47,7 +47,7 @@ $(function () {
 
     function goShop(status,id) {
         if(status==1){
-            return '<a href="/O2O/shopadmin/getshopmanagementinfo?shopId='+id+'">进入</a>';
+            return '<a href="/O2O/shopadmin/shopmanagement?shopId='+id+'">进入</a>';
         }
         else {
             return '';
