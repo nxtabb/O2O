@@ -31,3 +31,11 @@
 2020-09-09 15:02:12.520 [main] DEBUG c.h.O.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: delete from tb_product_category where product_category_id=? and shop_id=? 
 2020-09-09 15:02:12.538 [main] DEBUG c.h.O.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 6(Long), 1(Long)
 2020-09-09 15:02:12.599 [main] DEBUG c.h.O.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
+2020-09-09 21:09:47.343 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.insertProduct] use[master] Strategy,SqlCommonType[INSERT]..
+2020-09-09 21:09:47.344 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是master
+2020-09-09 21:09:47.353 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.insertProduct - ==>  Preparing: insert into tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2020-09-09 21:12:09.861 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.insertProduct] use[master] Strategy,SqlCommonType[INSERT]..
+2020-09-09 21:12:09.862 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是master
+2020-09-09 21:12:09.872 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.insertProduct - ==>  Preparing: insert into tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+2020-09-09 21:12:09.893 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.insertProduct - ==> Parameters: 店铺1(String), 店铺1的描述(String), test(String), 100(String), 50(String), 1(Integer), 2020-09-09 21:12:09.851(Timestamp), 2020-09-09 21:12:09.851(Timestamp), 1(Integer), 4(Long), 1(Long)
+2020-09-09 21:12:09.953 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.insertProduct - <==    Updates: 1

@@ -20,7 +20,7 @@ public class Product {
     private Integer priority;
     private Date createTime;
     private Date lastEditTime;
-    //商品是否可用
+    //商品是否可用 0表示下架，1表示可以展示
     private Integer enableStatus;
     //商品图片
     private List<ProductImg> productImgList;
