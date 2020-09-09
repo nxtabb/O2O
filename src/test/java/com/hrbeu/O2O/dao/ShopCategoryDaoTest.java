@@ -1,10 +1,12 @@
 package com.hrbeu.O2O.dao;
 
 import com.hrbeu.O2O.BaseTest;
+import com.hrbeu.O2O.Pojo.ProductCategory;
 import com.hrbeu.O2O.Pojo.ShopCategory;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -23,4 +25,6 @@ public class ShopCategoryDaoTest extends BaseTest {
         assertEquals(2,categories.size());
 
     }
+
+
 }

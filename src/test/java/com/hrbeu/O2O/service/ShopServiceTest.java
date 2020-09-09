@@ -59,4 +59,5 @@ public class ShopServiceTest extends BaseTest {
         int count = shopExecutions.getCount();
         System.out.println(count);
     }
+
 }

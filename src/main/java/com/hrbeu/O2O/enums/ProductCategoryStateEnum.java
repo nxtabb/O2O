@@ -2,7 +2,10 @@ package com.hrbeu.O2O.enums;
 
 public enum ProductCategoryStateEnum {
 
-    INNER_ERROR(-1001,"内部系统错误");
+    SUCCESS(1,"创建成功"),
+    INNER_ERROR(-1001,"内部系统错误"),
+    EMPTY_LIST(-1002,"添加数小于1");
+
 
     private int state;
     private String stateInfo;
