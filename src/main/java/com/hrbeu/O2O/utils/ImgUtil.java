@@ -1,5 +1,6 @@
 package com.hrbeu.O2O.utils;
 
+import com.hrbeu.O2O.Pojo_sup.ImageHolder;
 import com.hrbeu.O2O.controller.superadminController.AreaController;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
@@ -28,11 +29,11 @@ public class ImgUtil {
      * @param targetAddr 存储的目标地址
      * @return 相对路径
      */
-    public static String generateThumbnail(InputStream thumbnail, String targetAddr,String fileName){
+    public static String generateThumbnail(ImageHolder thumbnail,String targetAddr){
         //获取上传文件名字：时间+五位随机数
         String realFileName = getRandomFileName();
         //获取文件扩展名
-        String extension = getFileExtension(fileName);
+        String extension = getFileExtension(thumbnail.getImageName());
         //创建上传文件的目标文件夹
         mkDirPath(targetAddr);
         //获取到图片的位置+名字的相对路径
@@ -43,12 +44,44 @@ public class ImgUtil {
         logger.debug("current complete addr is: "+PathUtil.getImgBasePath()+relativeAddr);
         try {
             //对图片进行打水印和压缩存储
-            Thumbnails.of(thumbnail).size(200,200).outputQuality(0.8f).toFile(dest);
+            Thumbnails.of(thumbnail.getImage()).size(200,200).outputQuality(0.8f).toFile(dest);
         }catch (Exception e) {
             e.printStackTrace();
         }
         return relativeAddr;
     }
+
+
+    /**
+     *
+     * @param thumbnail  图片对象
+     * @param targetAddr 存储的目标地址
+     * @return 相对路径
+     */
+    public static String generateNormalImg(ImageHolder thumbnail,String targetAddr){
+        //获取上传文件名字：时间+五位随机数
+        String realFileName = getRandomFileName();
+        //获取文件扩展名
+        String extension = getFileExtension(thumbnail.getImageName());
+        //创建上传文件的目标文件夹
+        mkDirPath(targetAddr);
+        //获取到图片的位置+名字的相对路径
+        String relativeAddr = targetAddr+realFileName+extension;
+        logger.debug("current relativeAddr is: "+relativeAddr);
+        //获取到图片位置的绝对路径
+        File dest = new File(PathUtil.getImgBasePath()+relativeAddr);
+        logger.debug("current complete addr is: "+PathUtil.getImgBasePath()+relativeAddr);
+        try {
+            //对图片进行打水印和压缩存储
+            Thumbnails.of(thumbnail.getImage()).size(337,640).outputQuality(0.9f).toFile(dest);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+        return relativeAddr;
+    }
+
+
+
 
     //创建目标路径所涉及的目录
     private static void mkDirPath(String targetAddr) {
@@ -65,7 +98,6 @@ public class ImgUtil {
 
     //获取输入文件流的扩展名
     private static String getFileExtension(String fileName) {
-        System.out.println(fileName);
         //根据最后一个.截取文件名字得到扩展名
         return fileName.substring(fileName.lastIndexOf("."));
     }

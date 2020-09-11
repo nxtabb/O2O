@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ShopExecution{
     //操作状态
-    private int state;
+    private Integer state;
     //操作状态描述
     private String stateInfo;
     //操作数量
@@ -40,11 +40,11 @@ public class ShopExecution{
         this.shopList = shopList;
     }
 
-    public int getState() {
+    public Integer getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 

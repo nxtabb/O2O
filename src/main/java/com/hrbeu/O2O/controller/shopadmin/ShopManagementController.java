@@ -5,6 +5,7 @@ import com.hrbeu.O2O.Pojo.Area;
 import com.hrbeu.O2O.Pojo.PersonInfo;
 import com.hrbeu.O2O.Pojo.Shop;
 import com.hrbeu.O2O.Pojo.ShopCategory;
+import com.hrbeu.O2O.Pojo_sup.ImageHolder;
 import com.hrbeu.O2O.Pojo_sup.ShopExecution;
 import com.hrbeu.O2O.enums.ShopStateEnum;
 import com.hrbeu.O2O.service.AreaService;
@@ -139,8 +140,9 @@ public class ShopManagementController {
             shop.setOwner(owner);
             ShopExecution se = null;
             try {
+                ImageHolder imageHolder = new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream());
                 //将shop对象，shopImg的文件输入流，以及图片的名称传入addshop方法中，进行数据库和图片的存储。
-                se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                se = shopService.addShop(shop, imageHolder);
                 List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
                 if(shopList==null||shopList.size()==0){
                     shopList = new ArrayList<Shop>();
@@ -214,10 +216,12 @@ public class ShopManagementController {
             try {
                 //将shop对象，shopImg的文件输入流，以及图片的名称传入addshop方法中，进行数据库和图片的存储。
                 if(shopImg==null){
-                    se = shopService.modifyShop(shop,null,null);
+                    se = shopService.modifyShop(shop,null);
                 }
                 else {
-                    se = shopService.modifyShop(shop,shopImg.getInputStream(),shopImg.getOriginalFilename());
+                    ImageHolder imageHolder = new ImageHolder(shopImg.getOriginalFilename(),shopImg.getInputStream());
+
+                    se = shopService.modifyShop(shop,imageHolder);
                 }
                 if(se.getState()== ShopStateEnum.SUCCESS.getState()){
                     //成功

@@ -5,6 +5,7 @@ import com.hrbeu.O2O.Pojo.Area;
 import com.hrbeu.O2O.Pojo.PersonInfo;
 import com.hrbeu.O2O.Pojo.Shop;
 import com.hrbeu.O2O.Pojo.ShopCategory;
+import com.hrbeu.O2O.Pojo_sup.ImageHolder;
 import com.hrbeu.O2O.Pojo_sup.ShopExecution;
 import com.hrbeu.O2O.enums.ShopStateEnum;
 import org.junit.Test;
@@ -40,14 +41,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setEnableStatus(ShopStateEnum.CHECK.getState());
         File shopImg = new File("F:"+File.separator+"test.png");
         InputStream inputStream = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.addShop(shop,inputStream,shopImg.getName());
-        assertEquals(ShopStateEnum.CHECK.getState(),shopExecution.getState());
-    }
-    @Test
-    public void modifyShop01() throws FileNotFoundException {
-        Shop shop = shopService.getByShopId(1L);
-        ShopExecution shopExecution = shopService.modifyShop(shop, new FileInputStream(new File("D:" + File.separator + "test1.png")), "test1.png");
-        System.out.println(shopExecution.getState() + shopExecution.getStateInfo());
+        ImageHolder imageHolder = new ImageHolder(shopImg.getName(),inputStream);
+        ShopExecution shopExecution = shopService.addShop(shop,imageHolder);
     }
     @Test
     public void getShopTest(){

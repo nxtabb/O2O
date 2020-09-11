@@ -128,7 +128,7 @@ $(function () {
             formData.append('shopStr',JSON.stringify(shop));
             var verifyCodeActual = $("#j_kaptcha").val();
             if(verifyCodeActual==null){
-                $.toast("请输入验证码");
+                alert("请输入验证码");
                 return;
             }
             else {
@@ -142,11 +142,11 @@ $(function () {
                 processData:false,
                 success:function (data) {
                     if(data.success) {
-                        $.toast("提交成功");
+                        alert("提交成功");
                         $("#kaptcha_img").click();
                     }
                     else {
-                        $.toast("提交失败"+data.errMsg);
+                        alert("提交失败"+data.errMsg);
                         $("#kaptcha_img").click();
                     }
                 }
