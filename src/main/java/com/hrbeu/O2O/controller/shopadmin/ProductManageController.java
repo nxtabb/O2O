@@ -109,4 +109,8 @@ public class ProductManageController {
     }
 
 
+//    //modifyProduct
+//    @RequestMapping(value = "/modifyproduct")
+
+
 }

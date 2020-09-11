@@ -28,7 +28,82 @@
         #{enableStatus},
         #{productCategory.productCategoryId},
         #{shop.shopId})
-
-
     </insert>
+
+
+    <update id="updateProduct" parameterType="com.hrbeu.O2O.Pojo.Product" useGeneratedKeys="true" keyColumn="product_id" keyProperty="productId">
+        update tb_product
+        <set>
+            <if test="productName!=null">product_name=#{productName},</if>
+            <if test="productDesc!=null">product_desc=#{productDesc},</if>
+            <if test="imgAddr!=null">img_addr=#{imgAddr},</if>
+            <if test="normalPrice!=null">normal_price=#{normalPrice},</if>
+            <if test="promotionPrice!=null">promotion_price=#{promotionPrice},</if>
+            <if test="priority!=null">priority=#{priority},</if>
+            <if test="lastEditTime!=null">last_edit_time=#{lastEditTime},</if>
+            <if test="enableStatus!=null">enable_status=#{enableStatus},</if>
+            <if test="productCategory!=null and productCategory.productCategoryId!=null">
+            product_category_id=#{productCtegory.productCategoryId}</if>
+        </set>
+        <where>
+            and product_id = #{productId}
+            and shop_id = #{shop.shopId}
+        </where>
+    </update>
+    
+    <resultMap id="productMap" type="com.hrbeu.O2O.Pojo.Product">
+        <id column="product_id" property="productId"/>
+        <result column="product_name" property="productName"/>
+        <result column="product_desc" property="productDesc"/>
+        <result column="img_addr" property="imgAddr"/>
+        <result column="normal_price" property="normalPrice"/>
+        <result column="promotion_price" property="promotionPrice"/>
+        <result column="priority" property="priority"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_edit_time" property="lastEditTime"/>
+        <result column="enable_status" property="enableStatus"/>
+        <association property="productCategory" column="product_category_id" javaType="com.hrbeu.O2O.Pojo.ProductCategory">
+            <id column="product_category_id" property="productCategoryId"/>
+            <result column="product_category_name" property="productCategoryName"/>
+        </association>
+        <association property="shop" column="shop_id" javaType="com.hrbeu.O2O.Pojo.Shop">
+            <id column="shop_id" property="shopId"/>
+            <result column="owner_id" property="ownerId"/>
+            <result column="shop_name" property="shopName"/>
+        </association>
+        <collection property="productImgList" column="product_id" ofType="com.hrbeu.O2O.Pojo.ProductImg">
+            <id column="product_img_id" property="productImgId"/>
+            <result column="detail_img" property="imgAddr"/>
+            <result column="img_desc" property="imgDesc"/>
+            <result column="priority" property="priority"/>
+            <result column="create_time" property="createTime"/>
+            <result column="product_id" property="productId"/>
+        </collection>
+    </resultMap>
+    <select id="queryProductById" parameterType="Long" resultMap="productMap">
+        select
+        p.product_id,
+        p.product_name,
+        p.product_desc,
+        p.img_addr,
+        p.normal_price,
+        p.priority,
+        p.create_time,
+        p.last_edit_time,
+        p.enable_status,
+        p.product_category_id,
+        p.shop_id,
+        pm.product_img_id,
+        pm.img_addr as detail_img,
+        pm.img_desc,
+        pm.create_time
+        from
+        tb_product p
+        left join tb_product_img pm
+        on
+        p.product_id = pm.product_id
+        where p.product_id = #{value }
+        order by
+        pm.priority desc
+    </select>
 </mapper>

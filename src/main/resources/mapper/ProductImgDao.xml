@@ -17,4 +17,8 @@
         )
     </foreach>
 </insert>
+
+    <delete id="deleteProductImgByProductId" parameterType="long">
+        delete from tb_product_img where product_id=#{value }
+    </delete>
 </mapper>

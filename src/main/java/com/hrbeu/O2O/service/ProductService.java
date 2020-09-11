@@ -4,6 +4,7 @@ import com.hrbeu.O2O.Pojo.Product;
 import com.hrbeu.O2O.Pojo_sup.ImageHolder;
 import com.hrbeu.O2O.Pojo_sup.ProductExecution;
 import com.hrbeu.O2O.exceptions.ProductCategoryException;
+import com.hrbeu.O2O.exceptions.ProductException;
 
 import java.io.InputStream;
 import java.util.List;
@@ -14,5 +15,6 @@ public interface ProductService {
     thumbnail:包含缩略图信息：imageName+InputStream
     imageHolderList包含商品详情信息
      */
-    ProductExecution addProduct(Product product, ImageHolder thumbnail, List<ImageHolder> imageHolderList) throws ProductCategoryException;
+    ProductExecution addProduct(Product product, ImageHolder thumbnail, List<ImageHolder> imageHolderList) throws ProductException;
+    ProductExecution updateProduct(Product product,ImageHolder thumbnail,List<ImageHolder> imageHolderList) throws ProductException;
 }

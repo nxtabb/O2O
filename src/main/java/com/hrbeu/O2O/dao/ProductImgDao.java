@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ProductImgDao {
     int batchInsertProductImg(List<ProductImg> productImgList);
+    int batchUpdateProduct(List<ProductImg> productImgList);
+    int deleteProductImgByProductId(long product_id);
 }

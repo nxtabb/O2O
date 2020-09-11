@@ -1,33 +1,44 @@
-2020-09-10 08:55:54.244 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductImgDao.batchInsertProductImg] use[master] Strategy,SqlCommonType[INSERT]..
-2020-09-10 08:55:54.248 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是master
-2020-09-10 08:55:54.276 [main] DEBUG c.h.O2O.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img (img_addr,img_desc,priority,create_time,product_id) values ( ?, productImg.imgDesc}, ?, ?, ? ) , ( ?, productImg.imgDesc}, ?, ?, ? ) 
-2020-09-10 08:55:54.292 [main] DEBUG c.h.O2O.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: test(String), 1(Integer), 2020-09-10 08:55:54.228(Timestamp), 1(Long), test1(String), 2(Integer), 2020-09-10 08:55:54.228(Timestamp), 1(Long)
-2020-09-10 08:57:05.609 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductImgDao.batchInsertProductImg] use[master] Strategy,SqlCommonType[INSERT]..
-2020-09-10 08:57:05.610 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是master
-2020-09-10 08:57:05.635 [main] DEBUG c.h.O2O.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img (img_addr,img_desc,priority,create_time,product_id) values ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
-2020-09-10 08:57:05.651 [main] DEBUG c.h.O2O.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: test(String), test(String), 1(Integer), 2020-09-10 08:57:05.599(Timestamp), 1(Long), test1(String), test1(String), 2(Integer), 2020-09-10 08:57:05.599(Timestamp), 1(Long)
-2020-09-10 08:57:05.709 [main] DEBUG c.h.O2O.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
-2020-09-10 10:33:41.914 [main] DEBUG c.h.O.c.superadminController.AreaController - current relativeAddr is: \upload\item\shop\1\2020091010334197042.png
-2020-09-10 10:33:41.914 [main] DEBUG c.h.O.c.superadminController.AreaController - current complete addr is: F:\images\upload\item\shop\1\2020091010334197042.png
-2020-09-10 10:34:13.223 [main] DEBUG c.h.O.c.superadminController.AreaController - current relativeAddr is: \upload\item\shop\1\2020091010341369213.png
-2020-09-10 10:34:13.223 [main] DEBUG c.h.O.c.superadminController.AreaController - current complete addr is: F:\images\upload\item\shop\1\2020091010341369213.png
-2020-09-10 10:34:13.317 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.insertProduct] use[master] Strategy,SqlCommonType[INSERT]..
-2020-09-10 10:34:13.318 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是master
-2020-09-10 10:34:13.327 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.insertProduct - ==>  Preparing: insert into tb_product( product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
-2020-09-10 10:34:13.346 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.insertProduct - ==> Parameters: test1(String), test1(String), \upload\item\shop\1\2020091010341369213.png(String), 100(String), 50(String), 5(Integer), 2020-09-10 10:34:13.222(Timestamp), 2020-09-10 10:34:13.222(Timestamp), 1(Integer), 4(Long), 1(Long)
-2020-09-10 10:34:13.403 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.insertProduct - <==    Updates: 1
-2020-09-10 10:34:13.407 [main] DEBUG c.h.O.c.superadminController.AreaController - current relativeAddr is: \upload\item\shop\1\2020091010341323149.png
-2020-09-10 10:34:13.408 [main] DEBUG c.h.O.c.superadminController.AreaController - current complete addr is: F:\images\upload\item\shop\1\2020091010341323149.png
-2020-09-10 10:34:13.481 [main] DEBUG c.h.O.c.superadminController.AreaController - current relativeAddr is: \upload\item\shop\1\2020091010341341915.png
-2020-09-10 10:34:13.482 [main] DEBUG c.h.O.c.superadminController.AreaController - current complete addr is: F:\images\upload\item\shop\1\2020091010341341915.png
-2020-09-10 10:34:13.515 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductImgDao.batchInsertProductImg] use[master] Strategy,SqlCommonType[INSERT]..
-2020-09-10 10:34:13.515 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是master
-2020-09-10 10:34:13.528 [main] DEBUG c.h.O2O.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: insert into tb_product_img (img_addr,img_desc,priority,create_time,product_id) values ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
-2020-09-10 10:34:13.529 [main] DEBUG c.h.O2O.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: \upload\item\shop\1\2020091010341341915.png(String), null, null, 2020-09-10 10:34:13.514(Timestamp), 2(Long), \upload\item\shop\1\2020091010341341915.png(String), null, null, 2020-09-10 10:34:13.514(Timestamp), 2(Long)
-2020-09-10 10:34:13.585 [main] DEBUG c.h.O2O.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
-2020-09-10 10:51:24.331 [main] DEBUG c.h.O.c.superadminController.AreaController - current relativeAddr is: \upload\item\shop\1\2020091010512448735.png
-2020-09-10 10:51:24.331 [main] DEBUG c.h.O.c.superadminController.AreaController - current complete addr is: F:\images\upload\item\shop\1\2020091010512448735.png
-2020-09-10 10:53:43.307 [main] DEBUG c.h.O.c.superadminController.AreaController - current relativeAddr is: \upload\item\shop\1\2020091010534348067.png
-2020-09-10 10:53:43.308 [main] DEBUG c.h.O.c.superadminController.AreaController - current complete addr is: F:\images\upload\item\shop\1\2020091010534348067.png
-2020-09-10 10:55:32.582 [main] DEBUG c.h.O.c.superadminController.AreaController - current relativeAddr is: \upload\item\shop\1\2020091010553276922.png
-2020-09-10 10:55:32.582 [main] DEBUG c.h.O.c.superadminController.AreaController - current complete addr is: F:\images\upload\item\shop\1\2020091010553276922.png
+2020-09-11 19:19:49.345 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.updateProduct] use[master] Strategy,SqlCommonType[UPDATE]..
+2020-09-11 19:19:49.350 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是master
+2020-09-11 19:23:08.043 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.updateProduct] use[master] Strategy,SqlCommonType[UPDATE]..
+2020-09-11 19:23:08.044 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是master
+2020-09-11 19:23:08.070 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.updateProduct - ==>  Preparing: update tb_product SET product_name=?, normal_price=?, promotion_price=?, priority=?, last_edit_time=? WHERE product_id = ? 
+2020-09-11 19:23:08.089 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.updateProduct - ==> Parameters: 店铺111(String), 200(String), 100(String), 2(Integer), 2020-09-11 19:23:08.033(Timestamp), 1(Long)
+2020-09-11 19:23:08.160 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.updateProduct - <==    Updates: 1
+2020-09-11 20:22:02.853 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductById] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-11 20:22:02.856 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-11 20:22:02.932 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==>  Preparing: select p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr as detail_img, pm.img_desc, pm.create_time from tb_product p inner join tb_product_img pm on p.product_id = pm.product_id where p.product_id = ? order by pm.priority desc 
+2020-09-11 20:22:05.636 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2020-09-11 20:25:49.932 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductById] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-11 20:25:49.934 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-11 20:25:50.007 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==>  Preparing: select p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr as detail_img, pm.img_desc, pm.create_time from tb_product p inner join tb_product_img pm on p.product_id = pm.product_id where p.product_id = ? order by pm.priority desc 
+2020-09-11 20:25:51.358 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2020-09-11 20:28:05.274 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductById] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-11 20:28:05.275 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-11 20:28:05.284 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==>  Preparing: select p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr as detail_img, pm.img_desc, pm.create_time from tb_product p left join tb_product_img pm on p.product_id = pm.product_id where p.product_id = ? order by pm.priority desc 
+2020-09-11 20:28:07.514 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2020-09-11 20:30:27.505 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductById] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-11 20:30:27.506 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-11 20:30:27.516 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==>  Preparing: select p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr as detail_img, pm.img_desc, pm.create_time from tb_product p left join tb_product_img pm on p.product_id = pm.product_id where p.product_id = ? order by pm.priority desc 
+2020-09-11 20:30:33.260 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2020-09-11 20:30:33.340 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - <==      Total: 2
+2020-09-11 20:31:05.219 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductById] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-11 20:31:05.222 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-11 20:31:05.298 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==>  Preparing: select p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr as detail_img, pm.img_desc, pm.create_time from tb_product p left join tb_product_img pm on p.product_id = pm.product_id where p.product_id = ? order by pm.priority desc 
+2020-09-11 20:31:11.576 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2020-09-11 20:31:11.728 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - <==      Total: 2
+2020-09-11 20:31:46.501 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductById] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-11 20:31:46.505 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-11 20:31:46.604 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==>  Preparing: select p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr as detail_img, pm.img_desc, pm.create_time from tb_product p left join tb_product_img pm on p.product_id = pm.product_id where p.product_id = ? order by pm.priority desc 
+2020-09-11 20:31:49.010 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2020-09-11 20:31:49.167 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - <==      Total: 2
+2020-09-11 20:33:12.593 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductById] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-11 20:33:12.594 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-11 20:33:12.603 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==>  Preparing: select p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr as detail_img, pm.img_desc, pm.create_time from tb_product p left join tb_product_img pm on p.product_id = pm.product_id where p.product_id = ? order by pm.priority desc 
+2020-09-11 20:33:14.143 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2020-09-11 20:33:14.199 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - <==      Total: 2
+2020-09-11 20:33:59.573 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductById] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-11 20:33:59.574 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-11 20:33:59.583 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==>  Preparing: select p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr as detail_img, pm.img_desc, pm.create_time from tb_product p left join tb_product_img pm on p.product_id = pm.product_id where p.product_id = ? order by pm.priority desc 
+2020-09-11 20:34:01.962 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2020-09-11 20:34:02.009 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductById - <==      Total: 2

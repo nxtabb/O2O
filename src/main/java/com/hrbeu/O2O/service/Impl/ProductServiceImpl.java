@@ -62,8 +62,10 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
-
-
+    @Override
+    public ProductExecution updateProduct(Product product, ImageHolder thumbnail, List<ImageHolder> imageHolderList) throws ProductException {
+        return null;
+    }
 
 
     //批量处理商品详情图片，并操作tb_shop_img表
