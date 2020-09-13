@@ -39,7 +39,7 @@ public class ProductManageController {
     @Autowired
     private ProductCategoryService productCategoryService;
     private static final int IMAGEMAXCOUNT=6;
-
+    //添加商品
     @RequestMapping(value = "/addproduct",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> addProduct(HttpServletRequest request){
@@ -56,10 +56,14 @@ public class ProductManageController {
         MultipartHttpServletRequest multipartRequest = null;
         ImageHolder thumbnail = null;
         List<ImageHolder> imageHolderList = new ArrayList<>();
+        //得到resolver对象
         CommonsMultipartResolver resolver = new CommonsMultipartResolver(request.getSession().getServletContext());
         try {
+            //如果resolver不是空的
             if(resolver.isMultipart(request)){
+                //转化request格式
                 multipartRequest = (MultipartHttpServletRequest) request;
+                //得到文件
                 CommonsMultipartFile thumbnailFile = (CommonsMultipartFile) multipartRequest.getFile("thumbnail");
                 thumbnail = new ImageHolder(thumbnailFile.getOriginalFilename(),thumbnailFile.getInputStream());
                 for(int i=0;i<IMAGEMAXCOUNT;i++){

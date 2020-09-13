@@ -25,7 +25,7 @@ public class ProductCategoryManagementController {
     @Autowired
     private ProductCategoryService productCategoryService;
 
-
+    //获取商品类别列表
     @RequestMapping(value = "/getproductcategorylist",method = RequestMethod.GET)
     @ResponseBody
     //定义了一个Result的数据类型用以接收返回信息
@@ -44,17 +44,20 @@ public class ProductCategoryManagementController {
         }
 
     }
-
+    //添加商品类别信息
     @RequestMapping(value = "/addproductcategorys",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> addProductCategorys(@RequestBody List<ProductCategory> productCategoryList,HttpServletRequest request){
         Map<String,Object> modelMap = new HashMap<>();
+        //获取session的shop
         Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
         for(ProductCategory productCategory:productCategoryList){
+            //将shopId传给前端传来的类别list
             productCategory.setShopId(currentShop.getShopId());
         }
-        if(productCategoryList!=null&&productCategoryList.size()>0){
+        if(productCategoryList.size()>0){
             try {
+                //调用service批量添加商品类别信息
                 ProductCategoryExecution productCategoryExecution = productCategoryService.batchInsertProductCategory(productCategoryList);
                 if(productCategoryExecution.getState()==ProductCategoryStateEnum.SUCCESS.getState()){
                     modelMap.put("success",true);
@@ -76,7 +79,7 @@ public class ProductCategoryManagementController {
         }
         return modelMap;
     }
-
+    //删除商品类别
     @RequestMapping(value = "/removeproductcategory",method = RequestMethod.POST)
     @ResponseBody
     public Map<String,Object> removeProductCategory(Long productCategoryId,HttpServletRequest request){
@@ -97,8 +100,6 @@ public class ProductCategoryManagementController {
                 modelMap.put("errMsg",e.getMessage());
                 return modelMap;
             }
-
-
         }
         else {
             modelMap.put("success",false);
