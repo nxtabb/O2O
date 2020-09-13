@@ -11,6 +11,7 @@ import com.hrbeu.O2O.exceptions.ProductCategoryException;
 import com.hrbeu.O2O.exceptions.ProductException;
 import com.hrbeu.O2O.service.ProductService;
 import com.hrbeu.O2O.utils.ImgUtil;
+import com.hrbeu.O2O.utils.PageUtil;
 import com.hrbeu.O2O.utils.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,12 @@ public class ProductServiceImpl implements ProductService {
     thumbnail:包含缩略图信息：imageName+InputStream
     imageHolderList包含商品详情信息
      */
-
+    //通过id获取Product
+    @Override
+    public Product getProductById(long productId) {
+        return productDao.queryProductById(productId);
+    }
+    //新增商品
     @Override
     public ProductExecution addProduct(Product product, ImageHolder thumbnail,List<ImageHolder> imageHolderList) throws ProductCategoryException {
         //1.处理缩略图，获取缩略图相对路径，赋值给product
@@ -61,13 +67,55 @@ public class ProductServiceImpl implements ProductService {
         }
 
     }
-
+    //修改商品信息
     @Override
-    public ProductExecution updateProduct(Product product, ImageHolder thumbnail, List<ImageHolder> imageHolderList) throws ProductException {
-        return null;
+    public ProductExecution modifyProduct(Product product, ImageHolder thumbnail, List<ImageHolder> imageHolderList) throws ProductException {
+        if(product!=null&&product.getShop()!=null&&product.getShop().getShopId()!=null){
+            product.setLastEditTime(new Date());
+            if(thumbnail!=null){
+                Product tempProduct = productDao.queryProductById(product.getProductId());
+                if(tempProduct.getImgAddr()!=null){
+                    ImgUtil.delFileOrPath(tempProduct.getImgAddr());
+                }
+                addThubmnail(product,thumbnail);
+            }
+            if(imageHolderList!=null&&imageHolderList.size()>0){
+                deleteProductImgList(product.getProductId());
+                addProductImgList(product,imageHolderList);
+            }
+            try {
+                int effNum = productDao.updateProduct(product);
+                if(effNum<=0){
+                    throw new ProductException("更新信息商品失败");
+                }
+            return new ProductExecution(ProductStateEnum.SUCCESS,product);
+            }catch (Exception e){
+                throw new ProductException("更新商品失败："+e.getMessage());
+            }
+        }
+        else {
+            return new ProductExecution(ProductStateEnum.EMPTY_LIST);
+        }
+    }
+    //获取商品列表
+    @Override
+    public ProductExecution getProductList(Product product, int pageIndex, int pageSize) {
+        int rowIndex = PageUtil.pageIndexToRowIndex(pageIndex,pageSize);
+        List<Product> productList = productDao.queryProductList(product,rowIndex,pageSize);
+        int count = productDao.queryProductCount(product);
+        ProductExecution productExecution = new ProductExecution();
+        productExecution.setCount(count);
+        productExecution.setProductList(productList);
+        return productExecution;
     }
 
-
+    private void deleteProductImgList(Long productId) {
+        List<ProductImg> productImgList = productImgDao.queryProductImgList(productId);
+        for(ProductImg productImg:productImgList){
+            ImgUtil.delFileOrPath(productImg.getImgAddr());
+        }
+        productImgDao.deleteProductImgByProductId(productId);
+    }
     //批量处理商品详情图片，并操作tb_shop_img表
     private void addProductImgList(Product product, List<ImageHolder> imageHolderList) {
         //获取根路径

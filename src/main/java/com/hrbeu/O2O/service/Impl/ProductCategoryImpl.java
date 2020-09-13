@@ -3,6 +3,7 @@ package com.hrbeu.O2O.service.Impl;
 import com.hrbeu.O2O.Pojo.ProductCategory;
 import com.hrbeu.O2O.Pojo_sup.ProductCategoryExecution;
 import com.hrbeu.O2O.dao.ProductCategoryDao;
+import com.hrbeu.O2O.dao.ProductDao;
 import com.hrbeu.O2O.enums.ProductCategoryStateEnum;
 import com.hrbeu.O2O.exceptions.ProductCategoryException;
 import com.hrbeu.O2O.service.ProductCategoryService;
@@ -16,6 +17,8 @@ import java.util.List;
 public class ProductCategoryImpl implements ProductCategoryService {
     @Autowired
     private ProductCategoryDao productCategoryDao;
+    @Autowired
+    private ProductDao productDao;
     @Override
     public List<ProductCategory> getProductCategoryList(Long shopId) {
         return productCategoryDao.queryProductList(shopId);
@@ -44,8 +47,15 @@ public class ProductCategoryImpl implements ProductCategoryService {
     //@Transactional
     public ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws ProductCategoryException {
         //todo:将此商品下的商品id置为空
-        //未实现
-        //删除商品类别
+        try {
+            int effNum1 = productDao.updateProductCategoryToNull(productCategoryId);
+            if(effNum1<0){
+                throw new ProductCategoryException("商品类别更新失败");
+            }
+        }
+        catch (Exception e) {
+            throw new ProductCategoryException("删除商品失败" + e.getMessage());
+        }
         try {
             int effNum = productCategoryDao.deleteProductCategory(productCategoryId,shopId);
             if(effNum<=0){
@@ -58,6 +68,4 @@ public class ProductCategoryImpl implements ProductCategoryService {
             throw new ProductCategoryException(e.getMessage());
         }
     }
-
-
 }

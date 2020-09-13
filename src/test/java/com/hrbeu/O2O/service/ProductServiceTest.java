@@ -48,9 +48,21 @@ public class ProductServiceTest extends BaseTest {
         holderList.add(imageHolder1);
         holderList.add(imageHolder2);
         productService.addProduct(product,holder,holderList);
+    }
 
 
-
-
+    @Test
+    public void test02() throws FileNotFoundException {
+        Product product = new Product();
+        product.setProductId(1L);
+        Shop shop = new Shop();
+        shop.setShopId(1L);
+        product.setShop(shop);
+        File file = new File("F:"+File.separator+"test.png");
+        ImageHolder img = new ImageHolder(file.getName(),new FileInputStream(file));
+        List<ImageHolder> imageHolderList = new ArrayList<>();
+        imageHolderList.add(img);
+        imageHolderList.add(img);
+        productService.modifyProduct(product,img,imageHolderList);
     }
 }

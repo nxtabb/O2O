@@ -43,7 +43,7 @@
             <if test="lastEditTime!=null">last_edit_time=#{lastEditTime},</if>
             <if test="enableStatus!=null">enable_status=#{enableStatus},</if>
             <if test="productCategory!=null and productCategory.productCategoryId!=null">
-            product_category_id=#{productCtegory.productCategoryId}</if>
+            product_category_id=#{productCategory.productCategoryId}</if>
         </set>
         <where>
             and product_id = #{productId}
@@ -87,6 +87,7 @@
         p.product_desc,
         p.img_addr,
         p.normal_price,
+        p.promotion_price,
         p.priority,
         p.create_time,
         p.last_edit_time,
@@ -106,4 +107,50 @@
         order by
         pm.priority desc
     </select>
+
+    <select id="queryProductList" resultType="com.hrbeu.O2O.Pojo.Product">
+        select * from tb_product
+        <where>
+            <if test="productCondition.shop!=null">
+                and shop_id =#{productCondition.shop.shopId}
+            </if>
+            <if test="productCondition.productCategory!=null">
+                and product_category_id =#{productCondition.productCategory.productCategoryId}
+            </if>
+            <if test="productCondition.productName!=null">
+                and product_name like '%${productCondition.productName}%'
+            </if>
+            <if test="productCondition.enableStatus!=null">
+                and enable_status = #{productCondition.enableStatus}
+            </if>
+        </where>
+        order by priority desc
+        limit #{rowIndex},#{pageSize}
+    </select>
+    
+    
+    <select id="queryProductCount"  resultType="int">
+        select count(*) from tb_product
+        <where>
+            <if test="productCondition.shop!=null and productCondition.shop.shopId!=null">
+                and shop_id =#{productCondition.shop.shopId}
+            </if>
+            <if test="productCondition.productCategory!=null and productCondition.productCategory.productCategoryId!=null">
+                and product_category_id =#{productCondition.productCategory.productCategoryId}
+            </if>
+            <if test="productCondition.productName!=null">
+                and product_name like '%${productCondition.productName}%'
+            </if>
+            <if test="productCondition.enableStatus!=null">
+                and enable_status = #{productCondition.enableStatus}
+            </if>
+        </where>
+    </select>
+
+
+    <update id="updateProductCategoryToNull" parameterType="long">
+        update tb_product
+        set product_category_id = null
+        where product_category_id = #{value }
+    </update>
 </mapper>

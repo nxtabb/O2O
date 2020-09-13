@@ -31,4 +31,11 @@ public class ProductImgDaoTest extends BaseTest {
         imgs.add(img2);
         productImgDao.batchInsertProductImg(imgs);
     }
+
+    @Test
+    public void test2(){
+        long product_id = 1L;
+        List<ProductImg> productImgList= productImgDao.queryProductImgList(product_id);
+        System.out.println(productImgList.size());
+    }
 }

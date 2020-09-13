@@ -43,6 +43,7 @@ $(function () {
         });
 
 
+
     }
     function getCategory() {
         $.getJSON(categoryUrl,function (data) {
@@ -95,11 +96,9 @@ $(function () {
             alert("请输入验证码");
             return;
         }
-        alert(555);
         formData.append("verifyCodeActual",verifyCodeActual);
-        alert(321);
         $.ajax({
-            url:productPostUrl,
+            url:(isEdit?modifyUrl:productPostUrl),
             type:'POST',
             data:formData,
             contentType:false,

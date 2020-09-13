@@ -17,7 +17,7 @@ public class ProductExecution {
     private Product product;
     //查询店铺列表时使用
     private List<Product> productList;
-
+    public ProductExecution(){}
     //失败的构造器
     public ProductExecution(ProductStateEnum productStateEnum){
         this.state = productStateEnum.getState();

@@ -15,6 +15,8 @@ public interface ProductService {
     thumbnail:包含缩略图信息：imageName+InputStream
     imageHolderList包含商品详情信息
      */
+    Product getProductById(long productId);
     ProductExecution addProduct(Product product, ImageHolder thumbnail, List<ImageHolder> imageHolderList) throws ProductException;
-    ProductExecution updateProduct(Product product,ImageHolder thumbnail,List<ImageHolder> imageHolderList) throws ProductException;
+    ProductExecution modifyProduct(Product product,ImageHolder thumbnail,List<ImageHolder> imageHolderList) throws ProductException;
+    ProductExecution getProductList(Product product,int pageIndex,int pageSize);
 }

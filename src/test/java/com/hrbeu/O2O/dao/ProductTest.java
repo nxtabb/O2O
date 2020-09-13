@@ -58,4 +58,17 @@ public class ProductTest extends BaseTest {
         List<ProductImg> list = product.getProductImgList();
         System.out.println(list);
     }
+
+    @Test
+    public void test04(){
+        Product productCondition = new Product();
+        productCondition.setProductId(1L);
+        productCondition.setProductName("店铺");
+        List<Product > products = productDao.queryProductList(productCondition,0,5);
+        int a = productDao.queryProductCount(productCondition);
+        System.out.println(a);
+        for(Product product:products){
+            System.out.println(product.getImgAddr());
+        }
+    }
 }
