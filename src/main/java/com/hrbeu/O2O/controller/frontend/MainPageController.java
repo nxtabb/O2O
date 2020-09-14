@@ -51,4 +51,9 @@ public class MainPageController {
         modelMap.put("success",true);
         return modelMap;
     }
+
+    @RequestMapping(value = "/index",method = RequestMethod.GET)
+    private String index(){
+        return "frontend/index";
+    }
 }

@@ -24,7 +24,6 @@ public class ShopServiceImpl implements ShopService {
     @Autowired
     private ShopDao shopDao;
     @Override
-    @Transactional
     public ShopExecution addShop(Shop shop, ImageHolder thumbnail) {
         //
         if(shop==null){
