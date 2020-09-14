@@ -13,7 +13,7 @@ public interface ShopDao {
     //分页查询店铺列表 店铺名（模糊）、店铺状态、店铺类别、区域id、owner
     //rowindex：从第几行开始取
     //pageSize：每页取多少行数据
-    List<Shop> quertShopList(@Param("shopCondition") Shop shopCondition, @Param("rowIndex") int rowindex,@Param("pageSize") int pageSize);
+    List<Shop> queryShopList(@Param("shopCondition") Shop shopCondition, @Param("rowIndex") int rowindex,@Param("pageSize") int pageSize);
     //返回查询结果个数
     int queryShopCount(@Param("shopCondition") Shop shopCondition);
 }

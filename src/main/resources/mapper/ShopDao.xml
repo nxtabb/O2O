@@ -72,7 +72,7 @@
         and s.shop_category_id = sc.shop_category_id and s.shop_id=#{value}
     </select>
 
-    <select id="quertShopList" resultMap="shopMap">
+    <select id="queryShopList" resultMap="shopMap">
         select
         s.shop_id,
         s.shop_name,
@@ -100,8 +100,12 @@
             <if test="shopCondition.shopName!=null">
                 and s.shop_name like '%${shopCondition.shopName}%'
             </if>
+            <if test="shopCondition.shopCategory.parent!=null and shopCondition.shopCategory.parent.shopCategoryId!=null">
+                and s.shop_category_id in (select shop_category_id from tb_shop_category
+                where parent_id=#{shopCondition.shopCategory.parent.shopCategoryId})
+            </if>
             <if test="shopCondition.enableStatus!=null">
-                and s.shop_enable_status=#{shopCondition.enable_status}
+                and s.enable_status=#{shopCondition.enableStatus}
             </if>
             <if test="shopCondition.owner!=null and shopCondition.owner.userId!=null">
                 and s.owner_id=#{shopCondition.owner.userId}
@@ -109,7 +113,8 @@
             and s.area_id = a.area_id
             and s.shop_category_id = sc.shop_category_id
         </where>
-        ORDER BY s.priority desc limit #{rowIndex},#{pageSize}
+        ORDER BY s.priority desc
+        limit #{rowIndex},#{pageSize}
     </select>
 
     <select id="queryShopCount" resultType="int">
@@ -124,8 +129,12 @@
             <if test="shopCondition.shopName!=null">
                 and s.shop_name like '%${shopCondition.shopName}%'
             </if>
+            <if test="shopCondition.shopCategory.parent!=null and shopCondition.shopCategory.parent.shopCategoryId!=null">
+                and s.shop_category_id in (select shop_category_id from tb_shop_category
+                where parent_id=#{shopCondition.shopCategory.parent.shopCategoryId})
+            </if>
             <if test="shopCondition.enableStatus!=null">
-                and s.shop_enable_status=#{shopCondition.enable_status}
+                and s.enable_status=#{shopCondition.enableStatus}
             </if>
             <if test="shopCondition.owner!=null and shopCondition.owner.userId!=null">
                 and s.owner_id=#{shopCondition.owner.userId}

@@ -66,8 +66,23 @@ public class ShopDaoTest extends BaseTest {
         shop.setShopName("tes");
         int a = shopDao.queryShopCount(shop);
         System.out.println(a);
-        List<Shop> shopList = shopDao.quertShopList(shop,1,5);
+        List<Shop> shopList = shopDao.queryShopList(shop,1,5);
         System.out.println(shopList.get(0).getShopId());
+    }
+
+    @Test
+    public void test(){
+        Shop shop = new Shop();
+        ShopCategory old = new ShopCategory();
+        ShopCategory newCategory = new ShopCategory();
+        old.setShopCategoryId(1L);
+        newCategory.setParent(old);
+        shop.setShopCategory(newCategory);
+        List<Shop> shopList = shopDao.queryShopList(shop,0,5);
+        System.out.println(shopList);
+
+
+
     }
 
 }

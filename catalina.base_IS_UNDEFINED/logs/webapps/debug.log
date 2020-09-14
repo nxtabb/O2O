@@ -1,30 +1,18 @@
-2020-09-13 10:18:41.350 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductList] use[slave] Strategy,SqlCommonType[SELECT]..
-2020-09-13 10:18:41.353 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
-2020-09-13 10:18:41.363 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductList - ==>  Preparing: select * from tb_product WHERE product_name like '%店铺%' order by priority desc limit ?,? 
-2020-09-13 10:18:42.679 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 5(Integer)
-2020-09-13 10:18:42.735 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductList - <==      Total: 4
-2020-09-13 10:18:42.744 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductCount] use[slave] Strategy,SqlCommonType[SELECT]..
-2020-09-13 10:18:42.744 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
-2020-09-13 10:18:42.744 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductCount - ==>  Preparing: select count(*) from tb_product WHERE product_name like '%店铺%' 
-2020-09-13 10:18:42.745 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductCount - ==> Parameters: 
-2020-09-13 10:18:42.784 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductCount - <==      Total: 1
-2020-09-13 10:19:52.290 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductList] use[slave] Strategy,SqlCommonType[SELECT]..
-2020-09-13 10:19:52.291 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
-2020-09-13 10:19:52.300 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductList - ==>  Preparing: select * from tb_product WHERE product_name like '%店铺%' order by priority desc limit ?,? 
-2020-09-13 10:19:53.817 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 5(Integer)
-2020-09-13 10:19:53.892 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductList - <==      Total: 4
-2020-09-13 10:19:53.901 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ProductDao.queryProductCount] use[slave] Strategy,SqlCommonType[SELECT]..
-2020-09-13 10:19:53.902 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
-2020-09-13 10:19:53.902 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductCount - ==>  Preparing: select count(*) from tb_product WHERE product_name like '%店铺%' 
-2020-09-13 10:19:53.903 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductCount - ==> Parameters: 
-2020-09-13 10:19:53.946 [main] DEBUG com.hrbeu.O2O.dao.ProductDao.queryProductCount - <==      Total: 1
-2020-09-13 20:53:18.097 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.HeadLineDao.queryHeadLine] use[slave] Strategy,SqlCommonType[SELECT]..
-2020-09-13 20:53:18.098 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
-2020-09-13 20:53:18.110 [main] DEBUG com.hrbeu.O2O.dao.HeadLineDao.queryHeadLine - ==>  Preparing: select * from tb_head_line order by priority desc 
-2020-09-13 20:53:20.801 [main] DEBUG com.hrbeu.O2O.dao.HeadLineDao.queryHeadLine - ==> Parameters: 
-2020-09-13 20:53:20.867 [main] DEBUG com.hrbeu.O2O.dao.HeadLineDao.queryHeadLine - <==      Total: 1
-2020-09-13 20:57:43.931 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ShopCategoryDao.queryShopCategory] use[slave] Strategy,SqlCommonType[SELECT]..
-2020-09-13 20:57:43.932 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
-2020-09-13 20:57:43.942 [main] DEBUG c.hrbeu.O2O.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: select shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id from tb_shop_category WHERE parent_id is null order by priority desc 
-2020-09-13 20:57:45.727 [main] DEBUG c.hrbeu.O2O.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
-2020-09-13 20:57:45.799 [main] DEBUG c.hrbeu.O2O.dao.ShopCategoryDao.queryShopCategory - <==      Total: 1
+2020-09-14 18:49:49.649 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ShopDao.queryShopList] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-14 18:49:49.654 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-14 18:49:49.669 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - ==>  Preparing: select s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name from tb_shop s,tb_area a,tb_shop_category sc WHERE s.shop_category_id in (select shop_category from tb_shopcategory where parent_id=?) and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id ORDER BY s.priority desc limit ?,? 
+2020-09-14 18:49:50.894 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
+2020-09-14 18:50:30.933 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ShopDao.queryShopList] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-14 18:50:30.935 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-14 18:50:30.947 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - ==>  Preparing: select s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name from tb_shop s,tb_area a,tb_shop_category sc WHERE s.shop_category_id in (select shop_category from tb_shop_category where parent_id=?) and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id ORDER BY s.priority desc limit ?,? 
+2020-09-14 18:50:32.230 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
+2020-09-14 18:50:58.535 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ShopDao.queryShopList] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-14 18:50:58.536 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-14 18:50:58.547 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - ==>  Preparing: select s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name from tb_shop s,tb_area a,tb_shop_category sc WHERE s.shop_category_id in (select shop_category_id from tb_shop_category where parent_id=?) and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id ORDER BY s.priority desc limit ?,? 
+2020-09-14 18:50:59.030 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
+2020-09-14 18:50:59.092 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - <==      Total: 1
+2020-09-14 18:53:52.915 [main] DEBUG c.hrbeu.O2O.dao.split.DynamicDataSourceInterceptor - 设置方法[com.hrbeu.O2O.dao.ShopDao.queryShopList] use[slave] Strategy,SqlCommonType[SELECT]..
+2020-09-14 18:53:52.916 [main] DEBUG com.hrbeu.O2O.dao.split.DynamicDataSourceHolder - 所使用的数据源是slave
+2020-09-14 18:53:52.927 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - ==>  Preparing: select s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, s.area_id, a.area_name, s.shop_category_id, sc.shop_category_name from tb_shop s,tb_area a,tb_shop_category sc WHERE s.shop_category_id in (select shop_category_id from tb_shop_category where parent_id=?) and s.area_id = a.area_id and s.shop_category_id = sc.shop_category_id ORDER BY s.priority desc limit ?,? 
+2020-09-14 18:53:54.833 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
+2020-09-14 18:53:54.894 [main] DEBUG com.hrbeu.O2O.dao.ShopDao.queryShopList - <==      Total: 1
