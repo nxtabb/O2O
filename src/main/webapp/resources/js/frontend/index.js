@@ -45,7 +45,7 @@ $(function() {
 
 	$('.row').on('click', '.shop-classify', function(e) {
 		var shopCategoryId = e.currentTarget.dataset.category;
-		var newUrl = '/O2O/frontend/shopList?parentId=' + shopCategoryId;
+		var newUrl = '/O2O/frontend/shoplist?parentId=' + shopCategoryId;
 		window.location.href = newUrl;
 	});
 

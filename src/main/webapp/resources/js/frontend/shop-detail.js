@@ -5,14 +5,14 @@ $(function() {
 	// 默认一页返回的商品数
 	var pageSize = 3;
 
-	var listUrl = '/o2o/frontend/listProductsByShop';
+	var listUrl = '/O2O/frontend/listproductsbyshop';
 
 	var pageNum = 1;
 	var shopId = getQueryString('shopId');
 	var productCategoryId = '';
 	var productName = '';
 
-	var searchDivUrl = '/o2o/frontend/listShopDetailPageInfo?shopId=' + shopId;
+	var searchDivUrl = '/O2O/frontend/listshopdetailpageinfo?shopId=' + shopId;
 
 	getSearchDivData();
 	addItems(pageSize, pageNum);
@@ -27,8 +27,7 @@ $(function() {
 								var shop = data.shop;
 								$('#shop-cover-pic').attr('src', shop.shopImg);
 								$('#shop-update-time').html(
-										new Date(shop.lastEditTime)
-												.Format("yyyy-MM-dd"));
+										new Date(shop.lastEditTime));
 								$('#shop-name').html(shop.shopName);
 								$('#shop-desc').html(shop.shopDesc);
 								$('#shop-addr').html(shop.shopAddr);
@@ -74,7 +73,7 @@ $(function() {
 							+ '</div>' + '</div>' + '</li>' + '</ul>'
 							+ '</div>' + '</div>' + '<div class="card-footer">'
 							+ '<p class="color-gray">'
-							+ new Date(item.lastEditTime).Format("yyyy-MM-dd")
+							+ new Date(item.lastEditTime)
 							+ '更新</p>' + '<span>点击查看</span>' + '</div>'
 							+ '</div>';
 				});
@@ -126,7 +125,7 @@ $(function() {
 			'.card',
 			function(e) {
 				var productId = e.currentTarget.dataset.productId;
-				window.location.href = '/o2o/frontend/productDetail?productId='
+				window.location.href = '/O2O/frontend/productdetail?productId='
 						+ productId;
 			});
 
@@ -140,5 +139,10 @@ $(function() {
 	$('#me').click(function() {
 		$.openPanel('#panel-left-demo');
 	});
+
+	$(".tab-item").click(function () {
+		window.location.href="/O2O/frontend/index";
+	})
+
 	$.init();
 });

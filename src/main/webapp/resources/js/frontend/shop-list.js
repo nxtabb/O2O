@@ -7,7 +7,7 @@ $(function() {
 	// 获取店铺列表的URL
 	var listUrl = '/O2O/frontend/listshops';
 	// 获取店铺里诶包及区域列表的URL
-	var searchDivUrl = '/O2O/frontend/listshopspageinfo';
+	var searchDivUrl = '/O2O/frontend/listshoppageinfo';
 	// 页码
 	var pageNum = 1;
 	var parentId = getQueryString('parentId');
@@ -111,7 +111,7 @@ $(function() {
 	// 显示店铺详情页
 	$('.shop-list').on('click', '.card', function(e) {
 		var shopId = e.currentTarget.dataset.shopId;
-		window.location.href = '/O2O/frontend/shopDetail?shopId=' + shopId;
+		window.location.href = '/O2O/frontend/shopdetail?shopId=' + shopId;
 	});
 
 	// 选择新的店铺类别后，重置页码，清空原来的店铺列表重新加载新的搜索结果
@@ -172,6 +172,11 @@ $(function() {
 	$('#me').click(function() {
 		$.openPanel('#panel-left-demo');
 	});
+
+	$(".tab-item").click(function () {
+		window.location.href="/O2O/frontend/index";
+	})
+
 
 	// 初始化
 	$.init();

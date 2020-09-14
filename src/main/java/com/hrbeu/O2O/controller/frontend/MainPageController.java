@@ -61,4 +61,8 @@ public class MainPageController {
     private String shopList(){
         return "frontend/shop-list";
     }
+    @RequestMapping(value = "/shopdetail",method = RequestMethod.GET)
+    private String shopDetail(){
+        return "frontend/shop-detail";
+    }
 }
